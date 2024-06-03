@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using System.IO;
+
 
 namespace SANYUKT.Configuration
 {
@@ -15,12 +17,13 @@ namespace SANYUKT.Configuration
 
         static SANYUKTApplicationConfiguration()
         {
-            IConfigurationBuilder builder = null;
+            IConfigurationBuilder builder = new ConfigurationBuilder();
 
-            //if (File.Exists(Directory.GetCurrentDirectory() + "\\" + "appsettings.development.json"))
-            //    builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.development.json", optional: true, reloadOnChange: true);
-            //else
-            //    builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            if (File.Exists(Directory.GetCurrentDirectory() + "\\" + "appsettings.development.json"))
+                builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.development.json", optional: true, reloadOnChange: true);
+            else
+                builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
 
             configuration = builder.Build();
         }
