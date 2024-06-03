@@ -148,14 +148,7 @@ namespace SANYUKT.Configuration
             }
         }
 
-        public string FileDisplayPath
-        {
-            get
-            {
-                return configuration["FileDisplayPath"];
-            }
-        }
-
+      
         public string APIToken
         {
             get
