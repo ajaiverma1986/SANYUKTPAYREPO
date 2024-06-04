@@ -7,12 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SANYUKT.Database\SANYUKT.Database.csproj" />
     <ProjectReference Include="..\SANYUKT.Datamodel\SANYUKT.Datamodel.csproj" />
+    <ProjectReference Include="..\SANYUKT.Logging\SANYUKT.Logging.csproj" />
+    <ProjectReference Include="..\SANYUKT.Repository\SANYUKT.Repository.csproj" />
   </ItemGroup>
 
 </Project>
