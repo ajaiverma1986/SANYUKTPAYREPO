@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SANYUKT.Commonlib\SANYUKT.Commonlib.csproj" />
     <ProjectReference Include="..\SANYUKT.Datamodel\SANYUKT.Datamodel.csproj" />
     <ProjectReference Include="..\SANYUKT.Logging\SANYUKT.Logging.csproj" />
     <ProjectReference Include="..\SANYUKT.Repository\SANYUKT.Repository.csproj" />

@@ -8,11 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Audit.NET.SqlServer" Version="25.0.4" />
+    <PackageReference Include="Audit.WebApi.Core" Version="25.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SANYUKT.Commonlib\SANYUKT.Commonlib.csproj" />
     <ProjectReference Include="..\SANYUKT.Configuration\SANYUKT.Configuration.csproj" />
+    <ProjectReference Include="..\SANYUKT.Logging\SANYUKT.Logging.csproj" />
+    <ProjectReference Include="..\SANYUKT.Provider\SANYUKT.Provider.csproj" />
   </ItemGroup>
 
 </Project>

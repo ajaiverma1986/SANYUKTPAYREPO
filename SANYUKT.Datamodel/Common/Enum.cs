@@ -99,4 +99,32 @@ namespace SANYUKT.Datamodel.Common
         [Display(Name = "AECS Code Pending")]
         AECS_CODE_PENDING = 34,
     }
+    public enum UserMasterStatus
+    {
+        [Display(Name = "Pending with field Team")]
+        Draft = 1,
+        [Display(Name = "KYC Pending")]
+        KycPending = 2,
+        [Display(Name = "Code Pending")]
+        CodePending = 3,
+        [Display(Name = "Sign-on Pending")]
+        SignonPending = 4,
+        [Display(Name = "FID Status Pending")]
+        FIDStatusPending = 5,
+        [Display(Name = "Backened Activation Pending")]
+        BackenedActivationPending = 6,
+        [Display(Name = "Frontend Activation Pending")]
+        FrontendActivationPending = 7,
+        [Display(Name = "Activated")]
+        Activated = 8,
+        [Display(Name = "Rejected")]
+        Rejected = 9,
+        [Display(Name = "Dormant")]
+        Dormant = 10,
+        [Display(Name = "Deactivated")]
+        Deactivated = 11,
+        [Display(Name = "Terminated")]
+        Terminated = 12
+
+    }
 }
