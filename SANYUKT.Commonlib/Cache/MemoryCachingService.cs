@@ -1,9 +1,4 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SANYUKT.Commonlib.Cache
 {
@@ -48,6 +43,8 @@ namespace SANYUKT.Commonlib.Cache
             {
                 if (!string.IsNullOrEmpty(key))
                     memoryCache.Set(key, value, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(15)));
+
+                    
             });
         }
     }

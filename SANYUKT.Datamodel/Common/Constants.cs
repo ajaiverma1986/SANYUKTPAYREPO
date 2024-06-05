@@ -17,7 +17,7 @@ namespace SANYUKT.Datamodel.Common
 
     public static class SANYUKTIssuer
     {
-        public const string FIA = "urn:fiaglobal.com";
+        public const string FIA = "urn:Sanyuktpay.com";
     }
 
     public struct CacheKeys
