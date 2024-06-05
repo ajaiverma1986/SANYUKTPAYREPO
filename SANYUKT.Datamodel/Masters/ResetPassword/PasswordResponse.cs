@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SANYUKT.Datamodel.Library;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace SANYUKT.Datamodel.Masters.ResetPassword
 {
@@ -23,15 +20,15 @@ namespace SANYUKT.Datamodel.Masters.ResetPassword
         public void FromReader(SqlDataReader reader)
         {
 
-            //UserMasterID = datareaderhelper.Instance.GetDataReaderNullableValue_Int(reader, "UserMasterID");
+            UserMasterID = DataReaderHelper.Instance.GetDataReaderNullableValue_Int(reader, "usermasterid");
 
-            //Password = datareaderhelper.Instance.GetDataReaderNullableValue_String(reader, "Password");
+            Password = DataReaderHelper.Instance.GetDataReaderNullableValue_String(reader, "password");
 
-            //PanCard = datareaderhelper.Instance.GetDataReaderNullableValue_String(reader, "PanCard");
+            PanCard = DataReaderHelper.Instance.GetDataReaderNullableValue_String(reader, "pancard");
 
-            //EmailID_MobileNo = datareaderhelper.Instance.GetDataReaderNullableValue_String(reader, "EmailID_MobileNo");
+            EmailID_MobileNo = DataReaderHelper.Instance.GetDataReaderNullableValue_String(reader, "emailid_mobileno");
 
-            //Status = datareaderhelper.Instance.GetDataReaderNullableValue_Int(reader, "Status");
+            Status = DataReaderHelper.Instance.GetDataReaderNullableValue_Int(reader, "status");
 
         }
     }
@@ -58,31 +55,19 @@ namespace SANYUKT.Datamodel.Masters.ResetPassword
         {
 
 
-            //usermasterid = datareaderhelper.instance.getdatareadernullablevalue_int(reader, "usermasterid");
+            UserMasterID = DataReaderHelper.Instance.GetDataReaderNullableValue_Int(reader, "usermasterid");
 
-            //username = datareaderhelper.instance.getdatareadernullablevalue_string(reader, "username");
+            UserName = DataReaderHelper.Instance.GetDataReaderNullableValue_String(reader, "username");
 
-            //displayname = datareaderhelper.instance.getdatareadernullablevalue_string(reader, "displayname");
+            DisplayName = DataReaderHelper.Instance.GetDataReaderNullableValue_String(reader, "displayname");
 
-            //pancard = datareaderhelper.instance.getdatareadernullablevalue_string(reader, "pancard");
+            PanCard = DataReaderHelper.Instance.GetDataReaderNullableValue_String(reader, "pancard");
 
-            //email = datareaderhelper.instance.getdatareadernullablevalue_string(reader, "email");
+            Email = DataReaderHelper.Instance.GetDataReaderNullableValue_String(reader, "email");
 
-            //mobile = datareaderhelper.instance.getdatareadernullablevalue_string(reader, "mobile");
+            Mobile = DataReaderHelper.Instance.GetDataReaderNullableValue_String(reader, "mobile");
 
 
-
-            //Password = DataReaderHelper.Instance.GetDataReaderNullableValue_String(reader, "Password");
-
-            //Status = DataReaderHelper.Instance.GetDataReaderNullableValue_Int(reader, "Status");
-
-            //CreatedOn = DataReaderHelper.Instance.GetNullDataReaderValue_DateTime(reader, "CreatedOn");
-
-            //CreatedBy = DataReaderHelper.Instance.GetDataReaderNullableValue_Int(reader, "CreatedBy");
-
-            //UpdateOn = DataReaderHelper.Instance.GetNullDataReaderValue_DateTime(reader, "UpdateOn");
-
-            //UpdateBy = DataReaderHelper.Instance.GetDataReaderNullableValue_Int(reader, "UpdateBy");
         }
     }
 }

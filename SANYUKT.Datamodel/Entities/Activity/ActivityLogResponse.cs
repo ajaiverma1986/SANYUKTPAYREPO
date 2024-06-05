@@ -30,13 +30,13 @@ namespace SANYUKT.Datamodel.Entities.Activity
         public string CreatedBy { get; set; }
         public void FromReader(SqlDataReader reader)
         {
-            //ActivityID = DataReaderHelper.Instance.GetDataReaderValue_Long(reader, "ActivityID");
-            //EntityID = DataReaderHelper.Instance.GetDataReaderValue_Long(reader, "EntityID");
-            //ActivityName = DataReaderHelper.Instance.GetDataReaderValue_String(reader, "ActivityName");
-            //ActivityDate = DataReaderHelper.Instance.GetNullDataReaderValue_DateTimeOffset(reader, "ActivityDate");
-            //CreatedOn = DataReaderHelper.Instance.GetNullDataReaderValue_DateTimeOffset(reader, "CreatedOn");
-            //Comments = DataReaderHelper.Instance.GetDataReaderValue_String(reader, "Comments");
-            //CreatedBy = DataReaderHelper.Instance.GetDataReaderValue_String(reader, "CreatedBy");
+            ActivityID = DataReaderHelper.Instance.GetDataReaderValue_Long(reader, "ActivityID");
+            EntityID = DataReaderHelper.Instance.GetDataReaderValue_Long(reader, "EntityID");
+            ActivityName = DataReaderHelper.Instance.GetDataReaderValue_String(reader, "ActivityName");
+            ActivityDate = DataReaderHelper.Instance.GetNullDataReaderValue_DateTimeOffset(reader, "ActivityDate");
+            CreatedOn = DataReaderHelper.Instance.GetNullDataReaderValue_DateTimeOffset(reader, "CreatedOn");
+            Comments = DataReaderHelper.Instance.GetDataReaderValue_String(reader, "Comments");
+            CreatedBy = DataReaderHelper.Instance.GetDataReaderValue_String(reader, "CreatedBy");
         }
     }
 }
