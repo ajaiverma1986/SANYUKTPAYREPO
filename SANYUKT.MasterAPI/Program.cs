@@ -14,7 +14,6 @@ using SANYUKT.Provider;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -33,6 +32,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddMemoryCache();
 
 AuthenticationProvider _authenticationProvider = new AuthenticationProvider();
+
 //my data
 Audit.Core.Configuration.DataProvider = new SqlDataProvider()
 {
@@ -62,7 +62,7 @@ Audit.Core.Configuration.AddCustomAction(ActionType.OnEventSaving, scope =>
         }
     }
 });
-        
+
 
 var app = builder.Build();
 
@@ -77,6 +77,9 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 app.UseCors();
+
+//app.MapGet("/", () => "Hello World!");
+
 app.Use(async (context, next) =>
 {
     ISANYUKTServiceUser serviceUser = context.RequestServices.GetRequiredService<ISANYUKTServiceUser>();
@@ -106,9 +109,9 @@ app.Use(async (context, next) =>
 
     if (applicationUserDetails == null || (!string.IsNullOrEmpty(serviceUser.UserToken) && UserMasterID == 0))
     {
-       
+
         applicationUserDetails = await _authenticationProvider.GetApplicationAndUserDetails(serviceUser);
-       // await MemoryCachingService.Put(string.Format(CacheKeys.APPLICATION_USER_DETAIL, serviceUser.UserToken), applicationUserDetails);
+        // await MemoryCachingService.Put(string.Format(CacheKeys.APPLICATION_USER_DETAIL, serviceUser.UserToken), applicationUserDetails);
 
         if (applicationUserDetails != null && (applicationUserDetails.UserMasterID.HasValue))
         {
@@ -173,15 +176,16 @@ app.Use(async (context, next) =>
 
             if (userPermissions == null || userPermissions.Count == 0)
             {
-                
+
                 await MemoryCachingService.Put(string.Format(CacheKeys.USER_ROLES_API, serviceUser.ApplicationID, serviceUser.UserToken), _authenticationProvider.GetUserAccessPermissions(serviceUser).Result);
             }
-               
+
         }
     }
     await next();
 });
 
 app.MapControllers();
+
 
 app.Run();

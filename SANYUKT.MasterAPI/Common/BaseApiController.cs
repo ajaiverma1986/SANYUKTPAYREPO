@@ -11,7 +11,7 @@ namespace SANYUKT.API.Common
     [Route("[controller]")]
     [EnableCors("AllowAll")]
     [ResponseCache(Duration = -1, Location = ResponseCacheLocation.None, NoStore = true)]
-    public class BaseApiController : ControllerBase
+    public class BaseApiController : Controller
     {
         protected T GetValueFromClaims<T>(string claimsType)
         {

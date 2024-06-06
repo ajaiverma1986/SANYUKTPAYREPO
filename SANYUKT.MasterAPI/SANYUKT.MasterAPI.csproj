@@ -4,18 +4,22 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <InvariantGlobalization>false</InvariantGlobalization>
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Audit.NET.SqlServer" Version="25.0.4" />
-    <PackageReference Include="Audit.WebApi.Core" Version="25.0.4" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Audit.WebApi" Version="25.0.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SANYUKT.Commonlib\SANYUKT.Commonlib.csproj" />
-    <ProjectReference Include="..\SANYUKT.Configuration\SANYUKT.Configuration.csproj" />
+    <ProjectReference Include="..\SANYUKT.Datamodel\SANYUKT.Datamodel.csproj" />
     <ProjectReference Include="..\SANYUKT.Logging\SANYUKT.Logging.csproj" />
     <ProjectReference Include="..\SANYUKT.Provider\SANYUKT.Provider.csproj" />
   </ItemGroup>
