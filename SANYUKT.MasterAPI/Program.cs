@@ -73,10 +73,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
 
-app.UseAuthorization();
-app.UseCors();
 
 //app.MapGet("/", () => SANYUKTApplicationConfiguration.Instance.FIADB);
 
@@ -184,7 +181,10 @@ app.Use(async (context, next) =>
     }
     await next();
 });
+app.UseHttpsRedirection();
 
+app.UseAuthorization();
+app.UseCors();
 app.MapControllers();
 
 
