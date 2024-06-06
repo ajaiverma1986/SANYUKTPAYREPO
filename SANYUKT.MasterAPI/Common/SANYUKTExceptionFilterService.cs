@@ -7,7 +7,7 @@ using SANYUKT.Logging;
 using SANYUKT.Datamodel.Interfaces;
 using SANYUKT.Datamodel.Shared;
 
-namespace SANYUKT.API.Common
+namespace SANYUKT.MasterAPI.Common
 {
     public class SANYUKTExceptionFilterService : ExceptionFilterAttribute
     {

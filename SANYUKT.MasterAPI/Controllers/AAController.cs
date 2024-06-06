@@ -1,15 +1,14 @@
 ﻿using Audit.WebApi;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SANYUKT.API.Common;
 using SANYUKT.API.Security;
 using SANYUKT.Datamodel.DTO.Request;
 using SANYUKT.Datamodel.DTO.Response;
 using SANYUKT.Datamodel.Shared;
+using SANYUKT.MasterAPI.Common;
 using SANYUKT.Provider;
 
-namespace SANYUKT.API.Controllers
+namespace SANYUKT.MasterAPI.Controllers
 {
     
     [EnableCors("AllowAll")]

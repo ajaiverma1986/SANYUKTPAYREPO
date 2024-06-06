@@ -6,7 +6,7 @@ using SANYUKT.Datamodel.Interfaces;
 using SANYUKT.Datamodel.Shared;
 using System.Security.Claims;
 
-namespace SANYUKT.API.Common
+namespace SANYUKT.MasterAPI.Common
 {
     [Route("[controller]")]
     [EnableCors("AllowAll")]

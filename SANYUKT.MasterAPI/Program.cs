@@ -2,7 +2,7 @@ using Audit.Core;
 using Audit.SqlServer.Providers;
 using Audit.WebApi;
 using Microsoft.AspNetCore.Http.Features;
-using SANYUKT.API.Common;
+using SANYUKT.MasterAPI.Common;
 using SANYUKT.Commonlib.Cache;
 using SANYUKT.Configuration;
 using SANYUKT.Datamodel.Common;
@@ -78,7 +78,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseCors();
 
-//app.MapGet("/", () => "Hello World!");
+//app.MapGet("/", () => SANYUKTApplicationConfiguration.Instance.FIADB);
 
 app.Use(async (context, next) =>
 {
@@ -111,7 +111,7 @@ app.Use(async (context, next) =>
     {
 
         applicationUserDetails = await _authenticationProvider.GetApplicationAndUserDetails(serviceUser);
-        // await MemoryCachingService.Put(string.Format(CacheKeys.APPLICATION_USER_DETAIL, serviceUser.UserToken), applicationUserDetails);
+         await MemoryCachingService.Put(string.Format(CacheKeys.APPLICATION_USER_DETAIL, serviceUser.UserToken), applicationUserDetails);
 
         if (applicationUserDetails != null && (applicationUserDetails.UserMasterID.HasValue))
         {
